@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: fsd-backend
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    envVars:
+      - key: PORT
+        value: 5000
+
+      - key: MONGO_URI
+        value: mongodb+srv://student:ashiq123@cluster0.b4wr9t4.mongodb.net/eventdb
+
+      - key: JWT_SECRET
+        value: eventSecret123
